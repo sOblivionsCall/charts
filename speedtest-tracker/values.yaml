@@ -11,8 +11,8 @@ image:
   tag: "latest"
 
 imagePullSecrets: []
-nameOverride: "speedtest-sracker"
-fullnameOverride: "speedtest-sracker-chart"
+nameOverride: ""
+fullnameOverride: ""
 
 eula:
   OOKLA_EULA_GDPR: false
