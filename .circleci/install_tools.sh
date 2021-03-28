@@ -3,10 +3,11 @@
 set -o errexit
 
 # readonly HELM_VERSION=3.5.2
-readonly CHART_RELEASER_VERSION=0.1.4
+# readonly CHART_RELEASER_VERSION=0.1.4
+readonly CHART_RELEASER_VERSION=1.2.0
 
 echo "Installing Helm..."
-curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-3
+curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/scripts/get-helm-3
 chmod 700 get_helm.sh
 ./get_helm.sh
 # helm init --client-only
