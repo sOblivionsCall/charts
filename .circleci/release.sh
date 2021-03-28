@@ -95,7 +95,7 @@ update_index() {
         cp --force --recursive .deploy/docs/charts/* charts/
     fi
 
-    git checkout master -- README.md
+    git checkout main -- README.md
 
     if ! git diff --quiet; then
         git add .
