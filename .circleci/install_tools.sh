@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
-set -o errexit
+# set -o errexit
 
-readonly HELM_VERSION=2.13.1
+readonly HELM_VERSION=3.5.2
 readonly CHART_RELEASER_VERSION=0.1.4
 
 echo "Installing Helm..."
