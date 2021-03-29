@@ -2,7 +2,7 @@ version: 2
 jobs:
   lint-package-index:
     docker:
-      - image: helmpack/chart-releaser
+      - image: quay.io/helmpack/chart-releaser
     steps:
       - checkout
       - run:
