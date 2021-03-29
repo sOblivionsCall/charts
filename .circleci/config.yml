@@ -16,7 +16,7 @@ jobs:
           command: cr upload -o soblivionscall -r charts
       - run:
           name: index
-          command: cr index -i ./index.yaml -o soblivionscall
+          command: cr index -i ./index.yaml -o soblivionscall -c https://soblivionscall.github.io/charts/
   # release-charts:
   #   machine: true
   #   steps:
