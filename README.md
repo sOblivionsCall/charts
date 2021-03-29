@@ -1,6 +1,6 @@
 # Helm Charts
 
-[![<Helm Charts>](https://circleci.com/gh/<soblivionscall>/<charts>.svg?style=svg)](https://app.circleci.com/pipelines/github/sOblivionsCall)
+[![Helm Charts](https://circleci.com/gh/<soblivionscall>/<charts>.svg?style=svg)](https://app.circleci.com/pipelines/github/sOblivionsCall)
 
 This repository contains [Helm](https://helm.sh) charts for various projects
 
