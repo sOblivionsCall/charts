@@ -5,9 +5,9 @@ jobs:
       - image: quay.io/helmpack/chart-releaser
     steps:
       - checkout
-      - run:
-          name: lint
-          command: shellcheck -x .circleci/*.sh
+      # - run:
+      #     name: lint
+      #     command: shellcheck -x .circleci/*.sh
       - run:
           name: package
           command: cr package ./speedtest-tracker
