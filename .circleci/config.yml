@@ -16,7 +16,11 @@ jobs:
           command: cr upload -o soblivionscall -r charts
       - run:
           name: index
-          command: apk add git && cr index -i ./index.yaml -o soblivionscall -c https://soblivionscall.github.io/charts/ -r charts --push
+          command: |
+            apk add git
+            git config --global user.email "spencerhannah@gmail.com"
+            git config --global user.name "Spencer Hannah"
+            cr index -i ./index.yaml -o soblivionscall -c https://soblivionscall.github.io/charts/ -r charts --push
   # release-charts:
   #   machine: true
   #   steps:
