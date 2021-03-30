@@ -7,7 +7,12 @@ jobs:
       - checkout
       - run:
           name: package
-          command: cr package ./speedtest-tracker
+          command: |
+            charts=$(find . -maxdepth 1 -type d \( ! -name .git ! -name .deploy ! -name .circleci ! -name . \) -print)
+            for chart in $charts
+            do
+              cr package $chart
+            done
       - run:
           name: upload
           command: cr upload -o soblivionscall -r charts
