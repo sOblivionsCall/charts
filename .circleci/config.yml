@@ -15,8 +15,6 @@ jobs:
           name: index
           command: |
             apk add git
-            git config --global user.email "spencerhannah@gmail.com"
-            git config --global user.name "Spencer Hannah"
             cr index -i ./index.yaml -o soblivionscall -c https://soblivionscall.github.io/charts/ -r charts --push
 
 workflows:
