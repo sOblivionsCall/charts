@@ -3,6 +3,16 @@ entries:
   speedtest-tracker:
   - apiVersion: v2
     appVersion: 1.0.0
+    created: "2021-04-23T20:04:44.420590004Z"
+    description: A Helm chart for speedtest-tracker
+    digest: 4f7bfd7c2d047b10c9106124811d263275c18a3e00324a8b48174e7d68ab4597
+    name: speedtest-tracker
+    type: application
+    urls:
+    - https://github.com/sOblivionsCall/charts/releases/download/speedtest-tracker-2.0.0/speedtest-tracker-2.0.0.tgz
+    version: 2.0.0
+  - apiVersion: v2
+    appVersion: 1.0.0
     created: "2021-03-30T15:53:18.357424977Z"
     description: A Helm chart for speedtest-tracker
     digest: e2843b5d0522aaa1e1dd07c240446592b8c25ae07b070b0c911a91dab07d3acb
@@ -41,4 +51,4 @@ entries:
     urls:
     - https://github.com/sOblivionsCall/charts/releases/download/speedtest-tracker-1.0.0/speedtest-tracker-1.0.0.tgz
     version: 1.0.0
-generated: "2021-03-30T15:53:18.35745729Z"
+generated: "2021-04-23T20:04:44.420606021Z"
