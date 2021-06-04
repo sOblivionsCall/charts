@@ -1,6 +1,6 @@
 # Helm Charts
 
-[![CircleCI](https://circleci.com/gh/sOblivionsCall/charts/tree/main.svg?style=svg))](https://circleci.com/gh/sOblivionsCall/charts/tree/main)
+[![CircleCI](https://circleci.com/gh/sOblivionsCall/charts/tree/main.svg?style=shield)](https://circleci.com/gh/sOblivionsCall/charts/tree/main)
 
 This repository contains [Helm](https://helm.sh) charts for various projects
 
