@@ -37,7 +37,9 @@ securityContext: {}
   # runAsUser: 1000
 
 service:
-  type: NodePort
+# Had to write some pretty hacky workaround here to support UDP and TCP with type LoadBalancer. If you specify type LoadBalancer then it will 
+# create two different services since you can't have both TCP and UDP on a Load Balancer in Kubernetes at this time.
+  type: ClusterIP
   TCPport: 8080
   UDPport: 27016
 

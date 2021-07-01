@@ -1,18 +1,13 @@
 {{- if eq .Values.service.type "LoadBalancer" }}
-{{ else }}
 apiVersion: v1
 kind: Service
 metadata:
-  name: {{ include "space-engineers.fullname" . }}
+  name: {{ include "space-engineers.fullname" . }}-udp
   labels:
     {{- include "space-engineers.labels" . | nindent 4 }}
 spec:
   type: {{ .Values.service.type }}
   ports:
-    - port: {{ .Values.service.TCPport }}
-      targetPort: tcp
-      protocol: TCP
-      name: tcp
     - port: {{ .Values.service.UDPport }}
       targetPort: udp
       protocol: UDP
