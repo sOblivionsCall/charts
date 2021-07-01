@@ -44,6 +44,7 @@ service:
   UDPport: 27016
 
 ingress:
+# Not sure i see a use case for ingress but i'll keep it in for now.
   enabled: false
   className: ""
   annotations: {}
@@ -72,7 +73,7 @@ resources: {}
   #   memory: 128Mi
 
 persistence:
-  enabled: false
+  enabled: true
   annotations: {}
   ## If defined, storageClassName: <storageClass>
   ## If set to "-", storageClassName: "", which disables dynamic provisioning
