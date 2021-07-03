@@ -29,22 +29,27 @@ spec:
         {{- toYaml .Values.podSecurityContext | nindent 8 }}
       initContainers:
         - name: {{ .Chart.Name }}-init
-          image: busybox
+          image: ubuntu:xenial
           command: ['sh', '-c']
           args: 
-            - echo "Ensuring Directory Structure is Correct";
-              mkdir -p /appdata/space-engineers/SpaceEngineersDedicated; 
+            - echo "Installing required packages";
+              apt-get update && apt-get install wget unzip -y;
+              echo "Ensuring Directory Structure is Correct";
+              mkdir -p /appdata/space-engineers/SpaceEngineersDedicated;
               mkdir -p /appdata/space-engineers/steamcmd; 
               mkdir -p /appdata/space-engineers/World; 
-              mkdir -p /appdata/space-engineers/Plugins; 
-              if [ ! -f /appdata/space-engineers/World/Sandbox.sbc ]; then 
+              mkdir -p /appdata/space-engineers/Plugins;
+              echo "Directory Check Complete";
+              echo "Checking if World exists";
+              if [ ! -f /appdata/space-engineers/World/*.sbc ]; then 
                 echo "World not found, initalizing empty star system..."; 
                 wget https://github.com/mmmaxwwwell/space-engineers-dedicated-docker-linux/blob/main/star-system.zip?raw=true; 
                 unzip star-system.zip?raw=true -d /appdata/space-engineers; 
                 mv /appdata/space-engineers/SpaceEngineers-Dedicated.cfg /appdata/space-engineers/SpaceEngineersDedicated/;
-                chmod -R 777 /appdata
+                chmod -R 777 /appdata;
                 echo "Done"; 
               fi;
+              echo "Complete"
           volumeMounts:
           - name: appdata
             mountPath: /appdata

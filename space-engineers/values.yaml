@@ -73,7 +73,8 @@ resources: {}
   #   memory: 128Mi
 
 persistence:
-  enabled: true
+  # NFS seems too slow here, you may need to use a local persistent volume.
+  enabled: false
   annotations: {}
   ## If defined, storageClassName: <storageClass>
   ## If set to "-", storageClassName: "", which disables dynamic provisioning
@@ -86,7 +87,7 @@ persistence:
   ## A manually managed Persistent Volume and Claim
   ## Requires persistence.enabled: true
   ## If defined, PVC must be created manually before volume will be bound
-  # existingClaim:
+  # existingClaim: se-dedicated-pv-claim
 
   accessMode: ReadWriteOnce
   size: 50Gi
