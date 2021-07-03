@@ -1,0 +1,17 @@
+{{- if eq .Values.service.type "LoadBalancer" }}
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ include "space-engineers.fullname" . }}-tcp
+  labels:
+    {{- include "space-engineers.labels" . | nindent 4 }}
+spec:
+  type: {{ .Values.service.type }}
+  ports:
+    - port: {{ .Values.service.TCPport }}
+      targetPort: tcp
+      protocol: TCP
+      name: tcp
+  selector:
+    {{- include "space-engineers.selectorLabels" . | nindent 4 }}
+{{- end -}}
