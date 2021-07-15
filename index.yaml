@@ -3,6 +3,16 @@ entries:
   space-engineers:
   - apiVersion: v2
     appVersion: 1.0.0
+    created: "2021-07-15T14:52:52.68865612Z"
+    description: A Helm chart for Kubernetes
+    digest: 37ec05c05cc5b2e3751d666e2d4badc7b5c63bafa7a8d0a833191dd2d86021e3
+    name: space-engineers
+    type: application
+    urls:
+    - https://github.com/sOblivionsCall/charts/releases/download/space-engineers-1.0.1/space-engineers-1.0.1.tgz
+    version: 1.0.1
+  - apiVersion: v2
+    appVersion: 1.0.0
     created: "2021-07-03T17:09:08.347996917Z"
     description: A Helm chart for Kubernetes
     digest: 33998d965c47e0ae763854a6c56861fcb8d74876bd452333f27bebf7ecbeed69
@@ -12,6 +22,16 @@ entries:
     - https://github.com/sOblivionsCall/charts/releases/download/space-engineers-1.0.0/space-engineers-1.0.0.tgz
     version: 1.0.0
   speedtest-tracker:
+  - apiVersion: v2
+    appVersion: 1.0.0
+    created: "2021-07-15T14:52:52.771700531Z"
+    description: A Helm chart for speedtest-tracker
+    digest: e68f2ebb5cbf357a4cc09970ac4f063eecae687bf0ff4f55ba1c83b01b9900ae
+    name: speedtest-tracker
+    type: application
+    urls:
+    - https://github.com/sOblivionsCall/charts/releases/download/speedtest-tracker-3.0.3/speedtest-tracker-3.0.3.tgz
+    version: 3.0.3
   - apiVersion: v2
     appVersion: 1.0.0
     created: "2021-07-03T17:09:08.415344644Z"
@@ -112,4 +132,4 @@ entries:
     urls:
     - https://github.com/sOblivionsCall/charts/releases/download/speedtest-tracker-1.0.0/speedtest-tracker-1.0.0.tgz
     version: 1.0.0
-generated: "2021-07-03T17:09:08.415439944Z"
+generated: "2021-07-15T14:52:52.771808955Z"
