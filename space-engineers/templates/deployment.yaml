@@ -30,7 +30,7 @@ spec:
       initContainers:
         - name: {{ .Chart.Name }}-init
           image: ubuntu:xenial
-          command: ['sh', '-c']
+          command: ['bash', '-c']
           args: 
             - echo "Installing required packages";
               apt-get update && apt-get install wget unzip -y;
@@ -49,7 +49,7 @@ spec:
                 chmod -R 777 /appdata;
                 echo "Done"; 
               fi;
-              echo "Complete"
+              echo "Complete";
           volumeMounts:
           - name: appdata
             mountPath: /appdata
@@ -58,7 +58,6 @@ spec:
           securityContext:
             {{- toYaml .Values.securityContext | nindent 12 }}
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
-          # command: [ 'sh', '-c', 'sleep 999' ]
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           ports:
             - name: tcp
