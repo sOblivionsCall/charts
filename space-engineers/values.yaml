@@ -14,6 +14,10 @@ imagePullSecrets: []
 nameOverride: ""
 fullnameOverride: ""
 
+plugins:
+  pluginids: |
+    2552384677
+
 serviceAccount:
   # Specifies whether a service account should be created
   create: true

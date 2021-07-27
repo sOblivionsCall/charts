@@ -46,13 +46,34 @@ spec:
                 wget https://github.com/mmmaxwwwell/space-engineers-dedicated-docker-linux/blob/main/star-system.zip?raw=true; 
                 unzip star-system.zip?raw=true -d /appdata/space-engineers; 
                 mv /appdata/space-engineers/SpaceEngineers-Dedicated.cfg /appdata/space-engineers/SpaceEngineersDedicated/;
-                chmod -R 777 /appdata;
                 echo "Done"; 
               fi;
+              echo "Checking for Plugins to install";
+              if [ -f /plugins/pluginids ]; then
+                echo "Found Plugins to install";
+                add-apt-repository multiverse;
+                dpkg --add-architecture i386;
+                apt-get update;
+                echo steam steam/question select "I AGREE" | debconf-set-selections;
+                apt-get install steamcmd -y;
+                while IFS="" read -r p || [ -n "$p" ]; do
+                  echo "Installing $p";
+                  /usr/games/steamcmd +login anonymous +force_install_dir /appdata/space-engineers/Plugins +api_logging enabled verbose +workshop_download_item 298740 $p +quit;
+                  touch /appdata/space-engineers/Plugins/${p}.dll;
+                done < /plugins/pluginids;
+              else
+                echo "No Plugins found, skipping";
+              fi;
+              echo "Fix Permissions";
+              chmod -R 777 /appdata;
               echo "Complete";
           volumeMounts:
           - name: appdata
             mountPath: /appdata
+          {{- if .Values.plugins }}
+          - name: plugins
+            mountPath: /plugins
+          {{- end}}
       containers:
         - name: {{ .Chart.Name }}
           securityContext:
@@ -112,6 +133,11 @@ spec:
       {{- else }}
         emptyDir: {}
       {{- end }}
+      {{- if .Values.plugins }}
+      - name: plugins
+        configMap:
+          name: {{ .Chart.Name }}-plugins
+      {{- end}}
       {{- with .Values.nodeSelector }}
       nodeSelector:
         {{- toYaml . | nindent 8 }}

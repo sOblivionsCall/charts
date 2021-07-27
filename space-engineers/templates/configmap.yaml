@@ -1,0 +1,11 @@
+{{- if .Values.plugins }}
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ .Chart.Name }}-plugins
+{{- with .Values.plugins }}
+data:
+  {{- toYaml . | nindent 2 }}
+{{- end }}
+{{- else }}
+{{- end }}
