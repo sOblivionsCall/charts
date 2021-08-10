@@ -1,6 +1,6 @@
 # space-engineers
 
-The upstream container for this chart is maintainer by another user [here](https://github.com/mmmaxwwwell/space-engineers-dedicated-docker-linux).
+The upstream container for this chart is maintained by another user [here](https://github.com/mmmaxwwwell/space-engineers-dedicated-docker-linux).
 
 ## Installation
 
