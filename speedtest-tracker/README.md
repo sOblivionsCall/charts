@@ -1,6 +1,6 @@
 # speedtest-tracker
 
-I take no credit for work on the application, please see the upstream maintainer [here](https://github.com/henrywhitaker3/Speedtest-Tracker)
+The upstream container for this chart is maintained by another user [here](https://github.com/henrywhitaker3/Speedtest-Tracker)
 
 ## Installation
 
