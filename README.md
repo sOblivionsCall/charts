@@ -4,8 +4,8 @@
 
 This repository contains [Helm](https://helm.sh) charts for various projects
 
-* [speedtest-tracker](charts/speedtest-tracker/)
-* [space-engineers](charts/space-engineers/)
+* [speedtest-tracker](./charts/speedtest-tracker/)
+* [space-engineers](./charts/space-engineers/)
 
 ## Installing Charts from this Repository
 
